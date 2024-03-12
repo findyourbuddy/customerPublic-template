@@ -10,6 +10,30 @@
 
     <button id="test">Hello World</button>
     <p id="text"></p>
+
+
+    <div id="myData"></div>
+    <script type="text/javascript">
+        fetch('config.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+
+        function appendData(data) {
+            let mainContainer = document.getElementById("myData");
+            for (let i = 0; i < data.length; i++) {
+                let div = document.createElement("div");
+                div.innerHTML = 'Hello: ' + data[0].hello;
+                mainContainer.appendChild(div);
+            }
+        }
+    </script>
 </body>
     <script>
         document.getElementById("test").addEventListener("click", function () {
