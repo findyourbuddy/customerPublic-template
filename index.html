@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Website</title>
+    <title>getData()</title>
+    <noscript></noscript>
 </head>
 <body>
-    Hello, World!
+
+    <button id="test">Hello World</button>
+    <p id="text"></p>
 </body>
+    <script>
+        document.getElementById("test").addEventListener("click", function () {
+            document.getElementById("text").innerHTML = "Fick dich Lina!"
+        })
+    </script>
+
+    <script type="application/json" src="config.json"></script>
+    <script type="module" src="config.loader.js"></script>
 </html>
